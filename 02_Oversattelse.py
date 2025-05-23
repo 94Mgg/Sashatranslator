@@ -2,6 +2,23 @@ import streamlit as st
 import json
 import re
 
+# Bredere layout via Streamlit settings og CSS-hack
+st.set_page_config(page_title="Multisproget ordbogs-oversætter", layout="wide")
+
+# Bredere kodeblok
+st.markdown("""
+    <style>
+        .stCodeBlock, .stTextArea, .element-container, textarea, .stDownloadButton, .stButton, .stTextInput, .stTextArea {
+            max-width: 1200px !important;
+            width: 100% !important;
+        }
+        .stApp {
+            max-width: 1200px;
+            margin: auto;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
 @st.cache_data
 def load_dictionary():
     with open("dictionary.json", "r", encoding="utf-8") as f:
@@ -80,13 +97,11 @@ def translate(tokens, dictionary, languages, original_text):
                     translations[lang_short].append("UKENDT")
     return translations
 
-st.set_page_config(page_title="Multisproget ordbogs-oversætter", layout="centered")
-
 st.title("Multisproget ordbogs-oversætter")
 st.write("Indsæt din tekst. Output vises på alle sprog, én linje pr. sprog – klar til copy-paste.")
 
 default_text = "Lantern. Material: polypropylene, glass. Uses 2 AA batteries. Batteries not included."
-input_text = st.text_area("Indtast tekst:", value=default_text, height=120)
+input_text = st.text_area("Indtast tekst:", value=default_text, height=120, key="input_text_area")
 
 if st.button("Oversæt"):
     tokens = tokenize(input_text.strip(), dictionary)
@@ -98,8 +113,33 @@ if st.button("Oversæt"):
         sentence = re.sub(r'\s([,.:\-;])', r'\1', sentence)
         result_lines.append(f"{lang_short}\t{sentence}")
 
+    result_txt = '\n'.join(result_lines)
+
     st.success("Klar til copy-paste:")
-    st.code('\n'.join(result_lines), language="text")
-    st.download_button("Download som TXT", '\n'.join(result_lines), file_name="translations.txt")
+
+    # Vis kode-blok og kopier-knap
+    st.code(result_txt, language="text")
+
+    # Kopier til clipboard-knap (via Streamlit components + JS)
+    import streamlit.components.v1 as components
+    st.markdown(
+        """
+        <button id="copybtn" style="margin-bottom:1em;">Kopier til udklipsholder</button>
+        <script>
+        const copybtn = document.getElementById('copybtn');
+        if (copybtn) {
+            copybtn.onclick = () => {
+                const text = document.querySelector('pre').innerText;
+                navigator.clipboard.writeText(text);
+                copybtn.innerText = 'Kopieret!';
+                setTimeout(() => {copybtn.innerText = 'Kopier til udklipsholder';}, 1500);
+            };
+        }
+        </script>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.download_button("Download som TXT", result_txt, file_name="translations.txt")
 
 st.info("Hvis et ord ikke oversættes, vises 'UKENDT'. Tilføj det evt. i ordbogen for at opnå fuld oversættelse.")
