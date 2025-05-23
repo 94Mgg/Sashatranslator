@@ -1,8 +1,13 @@
+import streamlit as st
 import json
 import re
 
-with open("dictionary.json", "r", encoding="utf-8") as f:
-    dictionary = json.load(f)
+@st.cache_data
+def load_dictionary():
+    with open("dictionary.json", "r", encoding="utf-8") as f:
+        return json.load(f)
+
+dictionary = load_dictionary()
 
 LANGUAGES = [
     ("GB", "en_GB"),
@@ -59,14 +64,10 @@ def find_match(token, dictionary):
     return None
 
 def translate(tokens, dictionary, languages, original_text):
-    # Tokeniser også original-teksten for engelsk output (så tegn/mellemrum matcher)
-    original_tokens = re.findall(r'\w+|\S', original_text)
     translations = {}
-    for idx, (lang_short, lang_code) in enumerate(languages):
+    for lang_short, lang_code in languages:
         translations[lang_short] = []
         if lang_short == "GB":
-            # Gengiv original-teksten, så tæt som muligt, token for token
-            # Hvis tokeniseringen skulle blive forskellig (fx ekstra mellemrum), så brug tokens fra input
             translations[lang_short] = tokens
         else:
             for token in tokens:
@@ -79,17 +80,26 @@ def translate(tokens, dictionary, languages, original_text):
                     translations[lang_short].append("UKENDT")
     return translations
 
-def main():
-    print("Indtast teksten, der skal oversættes (f.eks.: Lantern. Material: polypropylene, glass. Uses 2 AA batteries. Batteries not included.)")
-    input_text = input().strip()
-    tokens = tokenize(input_text, dictionary)
+st.set_page_config(page_title="Multisproget ordbogs-oversætter", layout="centered")
+
+st.title("Multisproget ordbogs-oversætter")
+st.write("Indsæt din tekst. Output vises på alle sprog, én linje pr. sprog – klar til copy-paste.")
+
+default_text = "Lantern. Material: polypropylene, glass. Uses 2 AA batteries. Batteries not included."
+input_text = st.text_area("Indtast tekst:", value=default_text, height=120)
+
+if st.button("Oversæt"):
+    tokens = tokenize(input_text.strip(), dictionary)
     translations = translate(tokens, dictionary, LANGUAGES, input_text)
 
-    print("\n--- Oversættelser ---")
+    result_lines = []
     for lang_short, _ in LANGUAGES:
         sentence = ' '.join(translations[lang_short])
         sentence = re.sub(r'\s([,.:\-;])', r'\1', sentence)
-        print(f"{lang_short}\t{sentence}")
+        result_lines.append(f"{lang_short}\t{sentence}")
 
-if __name__ == "__main__":
-    main()
+    st.success("Klar til copy-paste:")
+    st.code('\n'.join(result_lines), language="text")
+    st.download_button("Download som TXT", '\n'.join(result_lines), file_name="translations.txt")
+
+st.info("Hvis et ord ikke oversættes, vises 'UKENDT'. Tilføj det evt. i ordbogen for at opnå fuld oversættelse.")
