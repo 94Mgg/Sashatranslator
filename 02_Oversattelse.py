@@ -111,6 +111,12 @@ if st.button("Oversæt"):
     for lang_short, _ in LANGUAGES:
         sentence = ' '.join(translations[lang_short])
         sentence = re.sub(r'\s([,.:\-;])', r'\1', sentence)
+        # Fjern dobbelttegn: .. eller :: eller .: eller :.
+        sentence = re.sub(r'([.:\-;,])\1+', r'\1', sentence)  # erstatter fx .. med .
+        sentence = re.sub(r'([.:\-;,])([.:\-;,])', r'\2', sentence)  # erstatter .: eller :.
+
+        # Fjern evt. punktum eller kolon lige før linjeslut (valgfrit)
+        sentence = re.sub(r'([.:\-;,])\s*$', r'\1', sentence)
         result_lines.append(f"{lang_short}\t{sentence}")
 
     result_txt = '\n'.join(result_lines)
