@@ -97,6 +97,21 @@ def translate(tokens, dictionary, languages, original_text):
                     translations[lang_short].append("UKENDT")
     return translations
 
+def clean_sentence(sentence):
+    # Fjern mellemrum før tegn
+    sentence = re.sub(r'\s([,.:\-;])', r'\1', sentence)
+    # Erstat alle sekvenser af . : ; , - med kun ét tegn (det sidste)
+    sentence = re.sub(r'([.:\-;,]){2,}', r'\1', sentence)
+    # Erstat fx .: eller :; eller .; eller .. eller :: eller ,: etc. med kun det sidste tegn
+    sentence = re.sub(r'([.:\-;,])([.:\-;,])', r'\2', sentence)
+    # Fjern flere gentagelser til sidst
+    sentence = re.sub(r'([.:\-;,])\1+', r'\1', sentence)
+    # Fjern evt. punktum eller kolon lige før linjeslut
+    sentence = re.sub(r'([.:\-;,])\s*$', r'\1', sentence)
+    # Fjern mellemrum før linjeslut
+    sentence = re.sub(r'\s+$', '', sentence)
+    return sentence
+
 st.title("Multisproget ordbogs-oversætter")
 st.write("Indsæt din tekst. Output vises på alle sprog, én linje pr. sprog – klar til copy-paste.")
 
@@ -110,13 +125,7 @@ if st.button("Oversæt"):
     result_lines = []
     for lang_short, _ in LANGUAGES:
         sentence = ' '.join(translations[lang_short])
-        sentence = re.sub(r'\s([,.:\-;])', r'\1', sentence)
-        # Fjern dobbelttegn: .. eller :: eller .: eller :.
-        sentence = re.sub(r'([.:\-;,])\1+', r'\1', sentence)  # erstatter fx .. med .
-        sentence = re.sub(r'([.:\-;,])([.:\-;,])', r'\2', sentence)  # erstatter .: eller :.
-
-        # Fjern evt. punktum eller kolon lige før linjeslut (valgfrit)
-        sentence = re.sub(r'([.:\-;,])\s*$', r'\1', sentence)
+        sentence = clean_sentence(sentence)
         result_lines.append(f"{lang_short}\t{sentence}")
 
     result_txt = '\n'.join(result_lines)
