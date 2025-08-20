@@ -3623,5 +3623,33 @@
         "Chinese [CN]": "藤",
         "French-FR [FR]": "rotin",
         "Arabic [AR] UPDATE": "راتان"
+    },
+    "TPE": {
+        "Danish [DK]": "TPE",
+        "German-DE [DE]": "TPE",
+        "Norwegian [NO]": "TPE",
+        "Swedish [SE]": "TPE",
+        "Finnish [FI]": "TPE",
+        "Polish [PL]": "TPE",
+        "Czech [CZ]": "TPE",
+        "Hungarian [HU]": "TPE",
+        "Dutch [NL]": "TPE",
+        "Slovak [SK]": "TPE",
+        "French-FR [FR]": "TPE",
+        "Slovenian [SI]": "Termoplastični elastomer",
+        "Croatian [HR]": "Termoplastični elastomer",
+        "Italian-IT [IT]": "TPE",
+        "Spanish-ES [ES]": "TPE",
+        "Bosnian [BA]": "Termoplastični elastomer",
+        "Serbian [RS]": "TPE",
+        "Ukrainian [UA]": "ТПЕ",
+        "Romanian [RO]": "elastomer termoplastic (TPE)",
+        "Bulgarian [BG]": "TPE (термопластичен еластомер)",
+        "Greek [GR]": "TPE (Θερμοπλαστικό ελαστομερές)",
+        "Portuguese-PT [PT]": "TPE",
+        "Russian [RU]": "ТЭП",
+        "Turkish [TR]": "TPE",
+        "Chinese [CN]": "热塑性弹性体 (TPE)",
+        "Arabic [AR] UPDATE": "TPE (المطاط الصناعي بالحرارة)"
     }
 }
