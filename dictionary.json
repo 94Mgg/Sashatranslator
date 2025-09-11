@@ -3679,7 +3679,7 @@
         "Turkish [TR]": "ışık zincirleri. 60 adet sıcak beyaz LED. Paket içerisindeyken ışıkları açmayın. İÇ VE DIŞ MEKAN KULLANIMI İÇİNDİR. ÖNEMLİ: Kullanmadan önce ekli kullanım kılavuzunu ve ürünle ilgili bilgileri okuyun. Dekoratif aydınlatma.",
         "Chinese [CN]": "圣诞Íú灯¡£60 个ÑìÛÜßä LED 灯¡£装饰灯øÐ装Ú±öè开ñýîñ£¬ÜôÔðöè开电ê¹¡£ Ê¦Íêãø内ûúãøèâÞÅéÄ¡£ñìé©ð«ãÆ£º ÞÅéÄîñ请阅读随Ý¾îÜ关éÍÜâ产ù¡îÜ说Ù¥â¢册与ãáãÓ¡£装饰灯Îý.",
         "French-FR [FR]": "Guirlande lumineuse. 60 LED blanches chaudes. Ne pas allumer la guirlande lumineuse, tant qu'elle est dans l'emballage. POUR UTILISATION INTÉRIEURE ET EXTÉRIEURE. IMPORTANT: Avant utilisation lire le manuel d'instructions et les informations concernant le produit. Décoration lumineuse",
-        "Arabic [AR]": "سلسلة من وحدات الإضاءة. • 60 وحدة إضاءة LED بإضاءة بيضاء مائلة للاصفرار.  ماتشعلش الضو وهو باقي فالتغليف. للاستخدام في الأماكن المغلقة والمكشوفة. مهم: اقرأ دليل التعليمات المرفق والمعلومات حول المنتج قبل الاستخدام. أضواء الديكور. صنع في الصين. مستورد من طرف: JYSK المغرب، 49 زنقة أحمد بركات، الطابق الأرضي رقم 3، المعاريف، الدار البيضاء (المغرب)"
+        "Arabic [AR] UPDATE": "سلسلة من وحدات الإضاءة. • 60 وحدة إضاءة LED بإضاءة بيضاء مائلة للاصفرار.  ماتشعلش الضو وهو باقي فالتغليف. للاستخدام في الأماكن المغلقة والمكشوفة. مهم: اقرأ دليل التعليمات المرفق والمعلومات حول المنتج قبل الاستخدام. أضواء الديكور. صنع في الصين. مستورد من طرف: JYSK المغرب، 49 زنقة أحمد بركات، الطابق الأرضي رقم 3، المعاريف، الدار البيضاء (المغرب)"
     },
     "Earthenware": {
         "Danish [DK]": "Lertøj",
@@ -3707,7 +3707,7 @@
         "Turkish [TR]": "Toprak Eşya",
         "Chinese [CN]": "陶器",
         "French-FR [FR]": "Faïence",
-        "Arabic [AR]": "الأواني الفخارية"
+        "Arabic [AR] UPDATE": "الأواني الفخارية"
     },
     "Maximum 3 light chains may be connected.": {
         "Danish [DK]": "Der kan maximum sættes 3 lyskæder sammen.",
@@ -3735,7 +3735,7 @@
         "Turkish [TR]": "En fazla 3 aydınlatma zinciri bağlanabilir.",
         "Chinese [CN]": "最多可串联 3 条灯链。",
         "French-FR [FR]": "3 guirlandes lumineuses maximum peuvent être connectées.",
-        "Arabic [AR]": "يمكن توصيل 3 سلاسل ضوء كحد أقصى."
+        "Arabic [AR] UPDATE": "يمكن توصيل 3 سلاسل ضوء كحد أقصى."
     },
     "The light chain MUST only be used with the 5m, wire between the adaptor and the first light bulb.": {
         "Danish [DK]": "Lyskæden SKAL bruges med 5m ledning mellem adaptor og den første lyspære.",
@@ -3763,7 +3763,7 @@
         "Turkish [TR]": "Aydınlatma zinciri SADECE adaptör ile ilk ampul arasındaki 5m'lik kablo ile kullanılmalıdır.",
         "Chinese [CN]": "该灯链必须专配适配器与首灯泡之间5米长的连接线使用。",
         "French-FR [FR]": "La guirlande lumineuse DOIT être utilisée uniquement avec le câble de 5 m entre l’adaptateur et la première ampoule.",
-        "Arabic [AR]": "يجب استخدام سلسلة الضوء فقط مع سلك 5 أمتار بين المحول ومصباح الضوء الأول."
+        "Arabic [AR] UPDATE": "يجب استخدام سلسلة الضوء فقط مع سلك 5 أمتار بين المحول ومصباح الضوء الأول."
     },
     "String lights. 60 warm white LED. Do not turn on the light, while it is in the packaging. FOR INDOOR AND OUTDOOR USE. IMPORTANT: Read the attached instruction manual and information about the product before use. Decoration lighting.": {
         "Danish [DK]": "Lyskæde. 60 varm hvid LED. Tænd ikke for lyset, mens det er i emballagen. TIL INDENDØRS OG UDENDØRS BRUG. VIGTIG: Læs vedlagte instruktion samt information om varen før brug. Dekorationsbelysning.",
