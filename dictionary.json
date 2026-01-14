@@ -3819,7 +3819,34 @@
         "Turkish [TR]": "köpek mama kabı",
         "Chinese [CN]": "狗碗",
         "French-FR [FR]": "gamelle pour chien",
-        "Arabic [AR] UPDATE": "وعاء للكلب"
+        "Arabic [AR]": "وعاء للكلب"
+    },
+    "Only for decoration. This is not a toy.": {
+        "Danish [DK]": "Kun til dekoration. Må ikke bruges som legetøj.",
+        "German-DE [DE]": "Nur für Dekorationszwecke. Dies ist kein Spielzeug.",
+        "Norwegian [NO]": "Kun til dekorasjon. Må ikke brukes som leketøy.",
+        "Swedish [SE]": "Endast för dekoration. Får inte användas som leksak.",
+        "Finnish [FI]": "Vain koristeeksi. Ei saa käyttää leikkikaluna.",
+        "Polish [PL]": "Tylko do dekoracji. Nie wolno wykorzystywać jako zabawka dla dzieci.",
+        "Czech [CZ]": "Pouze za účelem dekorace. Nepoužívejte jako hračku.",
+        "Hungarian [HU]": "Csak dekorációként használható. Ne használja játékként.",
+        "Dutch [NL]": "Alleen voor decoratie. Mag niet gebruikt worden als speelgoed.",
+        "Slovak [SK]": "Iba na dekoračné účely. Nepoužívajte ako hračku.",
+        "Slovenian [SI]": "Samo za okras. Izdelek ni igrača.",
+        "Croatian [HR]": "Samo za ukras. Ovo nije igračka.",
+        "Italian-IT [IT]": "Solo per scopi decorativi. Questo non è un giocattolo.",
+        "Spanish-ES [ES]": "Solo para uso decorativo. Esto no es un juguete.",
+        "Bosnian [BA]": "Samo za dekoraciju. Ovo nije igračka.",
+        "Serbian [RS]": "Samo za dekoraciju. Ovo nije igračka.",
+        "Ukrainian [UA]": "Тільки для декорування. Це не іграшка.",
+        "Romanian [RO]": "Doar pentru scop decorativ. Nu este o jucarie.",
+        "Bulgarian [BG]": "Само за декорация. Това не е играчка.",
+        "Greek [GR]": "Μόνο για διακόσμηση. Δεν είναι παιχνίδι.",
+        "Portuguese-PT [PT]": "Apenas para decoração. Este produto não é um brinquedo.",
+        "Russian [RU]": "Исключительно для декорации. Это не игрушка.",
+        "Turkish [TR]": "Yalnızca dekorasyon içindir. Bu bir oyuncak değildir.",
+        "Chinese [CN]": "本产品仅为装饰品，并非玩具。",
+        "French-FR [FR]": "Uniquement à des fins décoratives. Ceci n’est pas un jouet.",
+        "Arabic [AR]": "للزینة فقط. ھذا المنتج لیس لعبة."
     }
 }
-
